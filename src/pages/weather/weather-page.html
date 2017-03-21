@@ -1,0 +1,39 @@
+<!--
+  Generated template for the WeatherPage page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{'weather' | translate}}</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="page-weather weather-home container">
+    <div>
+        <div class="overlay">
+            <div class="title">
+                <label class="mainText">{{'current_weather' | translate}}</label>
+            </div>
+            <div class="search">
+                <input type="text" class="zipCode" [(ngModel)]="search">
+                <button ion-button icon-only (click)="searchWeather(search)"><ion-icon name="alert"></ion-icon></button>
+            </div>
+        </div>
+
+        <!--
+        <div ng-if="state" class="forecast">
+            <img src="{{props.icon}}" class="icon" />
+            <label class="bigText">{{props.main}}</label>
+            <div class="mainText2">City : {{props.city}}</div>
+            <div class="mainText2">Current condition : {{props.description}}</div>
+            <div class="bigText">{{props.temp}} °C</div>
+        </div>
+        -->
+    </div>
+
+</ion-content>
