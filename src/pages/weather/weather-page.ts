@@ -27,8 +27,8 @@ export class WeatherPage {
     this.weather.city(city,country)
     .map(data => data.json())
     .subscribe(data=> {
-      console.log(data);
       this.weatherList.push(data);
+      console.log(data);
     })
   }
   getLocalWeather(){

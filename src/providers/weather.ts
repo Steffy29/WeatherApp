@@ -31,9 +31,7 @@ export class Weather {
     let url = this.baseUrl + 'weather';
     url+= '?q=' +zipcode;
     url+='&units=metric&APPID=' + this.appId;
-
-    let result = this.http.get(url);
-    return result;
+    return this.http.get(url);
   }
   forecast(cityId: string , numbOfDays:number){
     let url = this.baseUrl + 'forecast/daily';
