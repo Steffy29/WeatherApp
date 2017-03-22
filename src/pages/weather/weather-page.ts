@@ -15,9 +15,10 @@ import {Weather} from '../../providers/weather';
 export class WeatherPage {
   public weatherList =[];
   public localWeather:Object;
+  public isActive: boolean;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public weather:Weather) {
-    this.getLocalWeather();
+    this.isActive = false;
   }
 
   ionViewDidLoad() {
@@ -28,13 +29,14 @@ export class WeatherPage {
     .map(data => data.json())
     .subscribe(data=> {
       this.weatherList.push(data);
-      console.log(data);
+      this.isActive = true;
     })
   }
   getLocalWeather(){
     this.weather.local().subscribe(
       data => {
         this.localWeather = data;
+        this.isActive = true;
       }
     )
   }
@@ -44,6 +46,8 @@ export class WeatherPage {
     .subscribe(data=> {
       console.log(data);
       this.weatherList.push(data);
+      this.localWeather = data;
+      this.isActive = true;
     })
   }
 }

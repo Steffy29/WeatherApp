@@ -5,5 +5,6 @@
     "contact": "Contact",
     "weather": "Weather",
     "follow": "Follow us on Twitter",
-    "current_weather": "Current weather for "
+    "current_weather": "Current weather for ",
+    "zipcode": ""
 }

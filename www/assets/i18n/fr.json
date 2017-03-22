@@ -5,5 +5,6 @@
     "contact": "Contact",
     "weather": "Météo",
     "follow": "Suivez nous sur Twitter",
-    "current_weather": "Météo courante pour "
+    "current_weather": "Saisir un code postal, code pays ",
+    "locate_weather": "Depuis votre position géolocalisée"
 }

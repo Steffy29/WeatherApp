@@ -20,20 +20,24 @@
                 <label class="mainText">{{'current_weather' | translate}}</label>
             </div>
             <div class="search">
-                <input type="text" class="zipCode" [(ngModel)]="search">
-                <button ion-button icon-only (click)="searchWeather(search)"><ion-icon name="alert"></ion-icon></button>
+                <input type="text" class="zipCode" [(ngModel)]="search" placeholder="{{'zipcode' | translate}}">
+                <button ion-button icon-only (click)="searchWeather(search)"><ion-icon name="search"></ion-icon></button>
+            </div>
+            <div class="search">
+                <span>
+                    <label class="mainText">{{'locate_weather' | translate}}</label>
+                    <button ion-button icon-only (click)="getLocalWeather()"><ion-icon name="locate"></ion-icon></button>
+                </span>
             </div>
         </div>
 
-        <!--
-        <div ng-if="state" class="forecast">
-            <img src="{{props.icon}}" class="icon" />
-            <label class="bigText">{{props.main}}</label>
-            <div class="mainText2">City : {{props.city}}</div>
-            <div class="mainText2">Current condition : {{props.description}}</div>
-            <div class="bigText">{{props.temp}} °C</div>
+        <div *ngIf="isActive" class="forecast">
+            <img src="http://openweathermap.org/img/w/{{localWeather.weather[0].icon}}.png" class="myicon" />
+            <label class="bigText">{{localWeather.weather[0].main}}</label>
+            <div class="mainText2">City : {{localWeather.name}}</div>
+            <div class="mainText2">Current condition : {{localWeather.weather[0].description}}</div>
+            <div class="bigText">{{localWeather.main.temp}} °C</div>
         </div>
-        -->
     </div>
 
 </ion-content>
